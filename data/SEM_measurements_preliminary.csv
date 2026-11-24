@@ -1,0 +1,11 @@
+image,feature,magnification,measurement,row_px,left_edge_px,right_edge_px,size_px,pixel_um,size_um,status
+TM-1000_7176(x500).jpg,H1 left aperture,500x,inner dark opening horizontal,410/440/470,235.5,435.8,200.31,0.36719,73.6,provisional
+TM-1000_7176(x500).jpg,H2 right aperture,500x,inner dark opening horizontal,410/440/470,851.0,1061.5,215.69,0.36719,79.2,provisional
+TM-1000_7176(x500).jpg,H1-H2 center pitch,500x,opening center-to-center horizontal,410/440/470,334.9,954.7,619.85,0.36719,227.6,provisional
+TM-1000_7179(x40).jpg,B1,40x,apparent bar width,350-549,241,370,129,4.58984,592.1,provisional
+TM-1000_7179(x40).jpg,B2,40x,apparent bar width,350-549,427,541,114,4.58984,523.2,provisional
+TM-1000_7179(x40).jpg,B3,40x,apparent bar width,350-549,557,684,127,4.58984,582.9,provisional
+TM-1000_7179(x40).jpg,B4,40x,apparent bar width,350-549,696,809,113,4.58984,518.7,provisional
+TM-1000_7179(x40).jpg,B1-B2 gap,40x,apparent gap,350-549,370,427,57,4.58984,261.6,provisional
+TM-1000_7179(x40).jpg,B2-B3 gap,40x,apparent gap,350-549,541,557,16,4.58984,73.4,provisional
+TM-1000_7179(x40).jpg,B3-B4 gap,40x,apparent gap,350-549,684,696,12,4.58984,55.1,provisional
