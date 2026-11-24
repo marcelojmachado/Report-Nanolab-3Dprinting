@@ -9,9 +9,6 @@
 \usepackage{lmodern}
 \usepackage{amsmath}
 \usepackage{graphicx}
-% The official-style burgundy vector emblem is rendered by Inkscape at build time.
-% Compile with pdflatex -shell-escape (see README).
-\usepackage[inkscapelatex=false]{svg}
 \usepackage{booktabs}
 \usepackage{pgfplots}
 \usepackage{fancyhdr}
@@ -34,8 +31,7 @@ Copy the image to the \texttt{figures/} directory.}}}}
 
 % Two-column scientific report with a full-width university identity,
 % title, and abstract on the first page.
-% Vilnius University burgundy vector emblem, color #78003F,
-% preserved with original dimensions/aspect ratio.
+% Burgundy Vilnius University PNG wordmark. No SVG conversion or Inkscape needed.
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\footnotesize Vilnius University \textbar{} Faculty of Physics}
@@ -48,13 +44,13 @@ Copy the image to the \texttt{figures/} directory.}}}}
 \twocolumn[{
 \begin{minipage}{\textwidth}
 \noindent
-\begin{minipage}[c]{.105\textwidth}
-\includesvg[height=16mm]{figures/vu_logo_burgundy}
+\begin{minipage}[c]{.28\textwidth}
+\includegraphics[height=18mm,keepaspectratio]{figures/vu_logo_burgundy.png}
 \end{minipage}\hfill
-\begin{minipage}[c]{.87\textwidth}
-{\large\bfseries Vilnius University}\par
+\begin{minipage}[c]{.70\textwidth}
+{\large\bfseries Faculty of Physics}\par
 \vspace{1mm}
-{\small Faculty of Physics \textbar{} Laser Research Center}\par
+{\small Laser Research Center}\par
 {\footnotesize Laboratory assignment MNFT-3 \textbar{} 2026}
 \end{minipage}\par
 \vspace{3mm}\hrule\vspace{3mm}
