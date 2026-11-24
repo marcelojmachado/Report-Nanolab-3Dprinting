@@ -35,11 +35,11 @@ Digital light processing (DLP) resin printing was investigated by characterizing
 \section{Introduction}
 Vat photopolymerization builds three-dimensional objects by selectively curing photosensitive resin. In digital light processing (DLP), a digital micromirror device projects an entire cross-sectional exposure pattern at once, unlike scanning-laser stereolithography \cite{bagheri2019photopolymerization}. The reproduction of small structures depends on the projected pixel grid, the optical imaging system, resin absorption, exposure conditions and development of the printed structures \cite{gong2015optical,gong2017custom}.
 
-The objectives of this experiment were to (i) assess the fidelity of periodic XY features, (ii) establish the exposure-dependent curing-depth working curve in the Z direction, and (iii) estimate exposure times necessary to produce selected curing depths. These measurements provide a practical basis for evaluating the printing conditions.
+The objectives of this experiment, following the Vilnius University MNFT-3 laboratory assignment \cite{vilnius2020mnft3}, were to (i) assess the fidelity of periodic XY features, (ii) establish the exposure-dependent curing-depth working curve in the Z direction, and (iii) estimate exposure times necessary to produce selected curing depths. These measurements provide a practical basis for evaluating the printing conditions.
 
 \section{Theory}
 \subsection{XY feature fidelity}
-The nominal DLP projected pixel size does not alone determine the minimum printable feature size, because the effective optical intensity distribution and the photopolymerization threshold influence the cured edges. The laboratory guide distinguishes features that preserve the intended geometry, remain identifiable but distorted, or are not resolved.
+The nominal DLP projected pixel size does not alone determine the minimum printable feature size, because the effective optical intensity distribution and the photopolymerization threshold influence the cured edges. The laboratory guide \cite{vilnius2020mnft3} distinguishes features that preserve the intended geometry, remain identifiable but distorted, or are not resolved.
 
 \subsection{Light penetration and working curve}
 With the single-exponential Beer--Lambert approximation, the irradiance decreases with depth $z$ inside the resin:
@@ -71,7 +71,7 @@ These relationships provide a curing-threshold estimate and do not alone establi
 The resolution-test model \texttt{resolution\_test\_XY.stl} spans $10\times10\times1.5$ in the STL coordinate units (assumed mm). It contains periodic bar/square features with nominal lateral dimensions of approximately 50, 75, 100, 150, 200, 300 and 400~$\mu$m. \textit{Pending confirmation: printer model, resin composition, projected pixel size, illumination wavelength, layer thickness, printing settings and cleaning/post-curing conditions.}
 
 \subsection{Working-curve measurement}
-Twenty exposure conditions, from 1 to 30~s, were recorded. The height measured with the microscope glass substrate present was corrected by subtracting the 0.025-cm glass thickness:
+Following the working-curve measurement procedure described in the MNFT-3 guide \cite{vilnius2020mnft3}, twenty exposure conditions, from 1 to 30~s, were recorded. The height measured with the microscope glass substrate present was corrected by subtracting the 0.025-cm glass thickness:
 \begin{equation}
 z_p[\mu\mathrm{m}]=10^4\left(d_{\mathrm{total}}[\mathrm{cm}]-0.025\,\mathrm{cm}\right).
 \label{eq:glass}
@@ -169,7 +169,7 @@ table[col sep=comma,x=ln_t_s,y=residual_um]
 \label{fig:residuals}
 \end{figure}
 
-Table~\ref{tab:times} reports the exposure times calculated using Eq.~\eqref{eq:prediction}. They describe expected \emph{threshold curing} depths and are not independently verified optimal printer settings.
+As requested by the laboratory assignment \cite{vilnius2020mnft3}, Table~\ref{tab:times} reports the exposure times calculated using Eq.~\eqref{eq:prediction}. They describe expected \emph{threshold curing} depths and are not independently verified optimal printer settings.
 
 \begin{table}[tbp]
 \centering
