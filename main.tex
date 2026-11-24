@@ -9,6 +9,9 @@
 \usepackage{lmodern}
 \usepackage{amsmath}
 \usepackage{graphicx}
+% The official-style burgundy vector emblem is rendered by Inkscape at build time.
+% Compile with pdflatex -shell-escape (see README).
+\usepackage[inkscapelatex=false]{svg}
 \usepackage{booktabs}
 \usepackage{pgfplots}
 \usepackage{fancyhdr}
@@ -31,8 +34,8 @@ Copy the image to the \texttt{figures/} directory.}}}}
 
 % Two-column scientific report with a full-width university identity,
 % title, and abstract on the first page.
-% The institutional emblem was taken from a VU thesis template; the
-% original PNG is retained without recolouring or changing aspect ratio.
+% Vilnius University burgundy vector emblem, color #78003F,
+% preserved with original dimensions/aspect ratio.
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\footnotesize Vilnius University \textbar{} Faculty of Physics}
@@ -46,7 +49,7 @@ Copy the image to the \texttt{figures/} directory.}}}}
 \begin{minipage}{\textwidth}
 \noindent
 \begin{minipage}[c]{.105\textwidth}
-\includegraphics[height=16mm,keepaspectratio]{figures/vu_logo.png}
+\includesvg[height=16mm]{figures/vu_logo_burgundy}
 \end{minipage}\hfill
 \begin{minipage}[c]{.87\textwidth}
 {\large\bfseries Vilnius University}\par
@@ -103,7 +106,7 @@ These relationships provide a curing-threshold estimate and do not alone establi
 
 \section{Experimental Methods}
 \subsection{DLP-printed structures}
-The resolution-test model \texttt{resolution\_test\_XY.stl} spans $10\times10\times1.5$ in the STL coordinate units (assumed mm). It contains periodic bar/square features with nominal lateral dimensions of approximately 50, 75, 100, 150, 200, 300 and 400~$\mu$m. \textit{Pending confirmation: printer model, resin composition, projected pixel size, illumination wavelength, layer thickness, printing settings and cleaning/post-curing conditions.}
+The resolution-test model \texttt{resolution\_test\_XY.stl} spans $10\times10\times1.5$ in the STL coordinate units (assumed mm). It contains periodic bar/square features with nominal lateral dimensions of approximately 50, 75, 100, 150, 200, 300 and 400~$\mu$m. Only one test pattern was fabricated; the final dimensions used in the printing software, including any rescaling, were not recorded. \textit{Pending confirmation: printer model, resin composition, projected pixel size, illumination wavelength, layer thickness, printing settings and cleaning/post-curing conditions.}
 
 \subsection{Working-curve measurement}
 Following the working-curve measurement procedure described in the MNFT-3 guide \cite{vilnius2020mnft3}, twenty exposure conditions, from 1 to 30~s, were recorded. The height measured with the microscope glass substrate present was corrected by subtracting the 0.025-cm glass thickness:
@@ -226,7 +229,7 @@ Target cured thickness ($\mu$m) & Exposure time (s)\\
 \end{table}
 
 \subsection{Preliminary SEM measurements of XY test structures}
-Image 7176 at 500$\times$ contains two dark openings whose preliminary internal horizontal widths were estimated to be 73.6 and 79.2~$\mu$m, with an apparent centre-to-centre distance of 227.6~$\mu$m (Fig.~\ref{fig:semxy}). At 40$\times$, image 7179 shows bars with apparent widths of 592.1, 523.2, 582.9 and 518.7~$\mu$m and gaps of 261.6, 73.4 and 55.1~$\mu$m (Fig.~\ref{fig:semxy}). The dimensions depend on the selection of SEM image edges; the latter is especially sensitive at low magnification.
+Image 7176 at 500$\times$ contains two dark openings whose preliminary internal horizontal widths were estimated to be 73.6 and 79.2~$\mu$m, with an apparent centre-to-centre distance of 227.6~$\mu$m (Fig.~\ref{fig:semxy}). At 40$\times$, image 7179 shows bars with apparent widths of 592.1, 523.2, 582.9 and 518.7~$\mu$m and gaps of 261.6, 73.4 and 55.1~$\mu$m (Fig.~\ref{fig:semxy}). The dimensions depend on the selection of SEM image edges; the latter is especially sensitive at low magnification. SEM observations indicate structures in the approximate 75-$\mu$m range. However, because the final fabrication dimensions and any global scaling applied to the CAD design were not recorded, the original printed feature dimensions cannot be identified unambiguously.
 
 % FIGURE 4 — full-width, two-panel SEM figure. Place both images in figures/.
 % figure* spans both columns to keep the annotations readable.
@@ -248,7 +251,7 @@ Image 7176 at 500$\times$ contains two dark openings whose preliminary internal 
 \begin{figure}[tbp]
 \centering
 \optionalimage{stl_sections.png}
-\caption{Cross-sections of the nominal XY test STL used to assess lateral feature reproduction.}
+\caption{Cross-sections of the nominal XY resolution-test STL. The final dimensions and any scaling applied during printing were not recorded, so the design is shown as a reference rather than an exact as-printed geometry.}
 \label{fig:stl}
 \end{figure}
 
@@ -275,7 +278,7 @@ Gap B3--B4 & 55.1 & 7179, 40$\times$\\
 \end{tabular}
 \end{table}
 
-These measurements should not yet be treated as percentage errors relative to the STL or used to claim a resolved minimum XY feature width. That assessment requires mapping SEM features to the correct CAD regions and repeating measurements in ImageJ.
+These measurements should not yet be treated as percentage errors relative to the STL or used to claim a resolved minimum XY feature width, particularly because the actual fabrication scale was not recorded. That assessment requires mapping SEM features to the correct CAD regions and repeating measurements in ImageJ.
 
 % OPTIONAL FUTURE FIGURE — uncomment when the paired XY measurements are ready.
 % \begin{figure}[tbp]
