@@ -1,15 +1,23 @@
 % MNFT-3 DLP 3D printing report — preliminary, based on supplied lab data.
+% TWO-COLUMN ARTICLE STYLE with official university emblem in the title/header.
 % Temporary standard class; switch to the Optica/Optics Express class
 % after the exact Fresnel report template files are supplied.
 % Recompute CSV inputs after editing data: python analysis/plot_working_curve.py
 \documentclass[10pt]{article}
-\usepackage[margin=21mm]{geometry}
+\usepackage[top=21mm,bottom=20mm,left=18mm,right=18mm]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{pgfplots}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+\setlength{\columnsep}{7mm}
+\setlength{\headheight}{24pt}
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0pt}
+\emergencystretch=1em
 \usepackage[hidelinks]{hyperref}
 \pgfplotsset{compat=1.18}
 
@@ -21,17 +29,43 @@
 Image pending: \texttt{\detokenize{#1}}\\
 Copy the image to the \texttt{figures/} directory.}}}}
 
-\title{Assessment of Spatial Resolution and Exposure-Dependent Curing Depth in DLP 3D Printing}
-\author{MNFT-3 Laboratory Report}
-\date{}
+% Two-column scientific report with a full-width university identity,
+% title, and abstract on the first page.
+% The institutional emblem was taken from a VU thesis template; the
+% original PNG is retained without recolouring or changing aspect ratio.
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize Vilnius University \textbar{} Faculty of Physics}
+\fancyhead[R]{\footnotesize MNFT-3}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
 
 \begin{document}
-\maketitle
-
-\begin{abstract}
-Digital light processing (DLP) resin printing was investigated by characterizing the curing-depth working curve and examining periodic XY test structures with scanning electron microscopy (SEM). Twenty exposure-time measurements (1--30 s) were corrected for a 250-$\mu$m glass substrate. A least-squares fit of the 19 positive-depth measurements against the natural logarithm of exposure time yielded an effective optical penetration depth of 146.1~$\mu$m and critical exposure time of 1.75~s ($R^2=0.959$). Preliminary SEM measurements were extracted from Hitachi TM-1000 micrographs. The XY resolution limit remains provisional pending assignment of the SEM regions to the corresponding CAD features.
-\end{abstract}
-
+\twocolumn[{
+\begin{minipage}{\textwidth}
+\noindent
+\begin{minipage}[c]{.105\textwidth}
+\includegraphics[height=16mm,keepaspectratio]{figures/vu_logo.png}
+\end{minipage}\hfill
+\begin{minipage}[c]{.87\textwidth}
+{\large\bfseries Vilnius University}\par
+\vspace{1mm}
+{\small Faculty of Physics \textbar{} Laser Research Center}\par
+{\footnotesize Laboratory assignment MNFT-3 \textbar{} 2026}
+\end{minipage}\par
+\vspace{3mm}\hrule\vspace{3mm}
+{\centering
+{\LARGE\bfseries Assessment of Spatial Resolution and Exposure-Dependent Curing Depth in DLP 3D Printing\par}
+\vspace{2mm}
+{\small Laboratory Report \textbar{} Laser Physics and Optical Technologies\par}
+}
+\vspace{3mm}
+\noindent\textbf{Abstract.}\enspace
+{\small Digital light processing (DLP) resin printing was investigated by characterizing the curing-depth working curve and examining periodic XY test structures with scanning electron microscopy (SEM). Twenty exposure-time measurements (1--30 s) were corrected for a 250-$\mu$m glass substrate. A least-squares fit of the 19 positive-depth measurements against the natural logarithm of exposure time yielded an effective optical penetration depth of 146.1~$\mu$m and critical exposure time of 1.75~s ($R^2=0.959$). Preliminary SEM measurements were extracted from Hitachi TM-1000 micrographs. The XY resolution limit remains provisional pending assignment of the SEM regions to the corresponding CAD features.\par}
+\vspace{4mm}
+\end{minipage}
+}]
 \section{Introduction}
 Vat photopolymerization builds three-dimensional objects by selectively curing photosensitive resin. In digital light processing (DLP), a digital micromirror device projects an entire cross-sectional exposure pattern at once, unlike scanning-laser stereolithography \cite{bagheri2019photopolymerization}. The reproduction of small structures depends on the projected pixel grid, the optical imaging system, resin absorption, exposure conditions and development of the printed structures \cite{gong2015optical,gong2017custom}.
 
@@ -175,6 +209,7 @@ As requested by the laboratory assignment \cite{vilnius2020mnft3}, Table~\ref{ta
 \centering
 \caption{Predicted exposure times from the preliminary curing-depth fit.}
 \label{tab:times}
+\small
 \begin{tabular}{@{}cc@{}}
 \toprule
 Target cured thickness ($\mu$m) & Exposure time (s)\\
@@ -190,23 +225,23 @@ Target cured thickness ($\mu$m) & Exposure time (s)\\
 \end{table}
 
 \subsection{Preliminary SEM measurements of XY test structures}
-Image 7176 at 500$\times$ contains two dark openings whose preliminary internal horizontal widths were estimated to be 73.6 and 79.2~$\mu$m, with an apparent centre-to-centre distance of 227.6~$\mu$m (Fig.~\ref{fig:semholes}). At 40$\times$, image 7179 shows bars with apparent widths of 592.1, 523.2, 582.9 and 518.7~$\mu$m and gaps of 261.6, 73.4 and 55.1~$\mu$m (Fig.~\ref{fig:sembars}). The dimensions depend on the selection of SEM image edges; the latter is especially sensitive at low magnification.
+Image 7176 at 500$\times$ contains two dark openings whose preliminary internal horizontal widths were estimated to be 73.6 and 79.2~$\mu$m, with an apparent centre-to-centre distance of 227.6~$\mu$m (Fig.~\ref{fig:semxy}). At 40$\times$, image 7179 shows bars with apparent widths of 592.1, 523.2, 582.9 and 518.7~$\mu$m and gaps of 261.6, 73.4 and 55.1~$\mu$m (Fig.~\ref{fig:semxy}). The dimensions depend on the selection of SEM image edges; the latter is especially sensitive at low magnification.
 
-% FIGURE 4 — add the provided annotated micrograph to figures/.
-\begin{figure}[tbp]
+% FIGURE 4 — full-width, two-panel SEM figure. Place both images in figures/.
+% figure* spans both columns to keep the annotations readable.
+\begin{figure*}[tbp]
+\centering
+\begin{minipage}[t]{.48\textwidth}
 \centering
 \optionalimage{SEM_7176_annotated.png}
-\caption{Hitachi TM-1000 SEM image (500$\times$) annotated with two preliminary inner-aperture measurements.}
-\label{fig:semholes}
-\end{figure}
-
-% FIGURE 5 — add the annotated image to figures/.
-\begin{figure}[tbp]
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\textwidth}
 \centering
 \optionalimage{SEM_7179_annotated.png}
-\caption{Hitachi TM-1000 SEM image (40$\times$) annotated with preliminary bar widths and gaps.}
-\label{fig:sembars}
-\end{figure}
+\end{minipage}
+\caption{Preliminary image-based measurements from Hitachi TM-1000 SEM micrographs: (a) inner apertures at 500$\times$ (image 7176) and (b) apparent bar widths and gaps at 40$\times$ (image 7179). Edges and CAD correspondence require confirmation.}
+\label{fig:semxy}
+\end{figure*}
 
 % FIGURE 6 — add the CAD-section illustration to figures/.
 \begin{figure}[tbp]
@@ -220,6 +255,7 @@ Image 7176 at 500$\times$ contains two dark openings whose preliminary internal 
 \centering
 \caption{Selected apparent SEM dimensions; provisional until features are matched to nominal CAD geometry.}
 \label{tab:sem}
+\footnotesize
 \begin{tabular}{@{}lrl@{}}
 \toprule
 Feature & Size ($\mu$m) & Image\\
