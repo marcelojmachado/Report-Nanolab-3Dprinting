@@ -15,7 +15,7 @@ The first-page header uses `figures/vu_logo_burgundy.png`, a ready-to-use burgun
 - `data/working_curve_fit.csv`: fit values and residuals for LaTeX figures.
 - `data/SEM_measurements_preliminary.csv`: preliminary projected SEM measurements (not yet matched to CAD).
 - `analysis/plot_working_curve.py`: regenerates the conventional curing-depth versus time graph, linearized graph, residuals, and fit CSV.
-- `figures/stl_sections.png`: now included as an actual image, with a full-width figure in `main.tex`.
+- `figures/xy_resolution_3d_perspective.png`: perspective rendering of the actual uploaded `resolution_test_XY.stl` mesh; **the only CAD/design figure** in `main.tex`, spanning two columns. The earlier `figures/stl_sections.png` is retained in the repository but no longer used in the report.
 - `figures/SEM_7176_annotated.png` and `figures/SEM_7179_annotated.png`: still to be uploaded; placeholders remain until they are available.
 
 To regenerate analysis:
