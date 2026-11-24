@@ -1,15 +1,27 @@
-% Preliminary MNFT-3 laboratory report draft.
-% Replace the temporary document class with the exact Optica/Optics Express
-% template from the earlier Fresnel report when the style files are available.
-% All empirical values below are intentionally marked as pending.
+% MNFT-3 DLP 3D printing report — preliminary, based on supplied lab data.
+% Temporary standard class; switch to the Optica/Optics Express class
+% after the exact Fresnel report template files are supplied.
+% Recompute CSV inputs after editing data: python analysis/plot_working_curve.py
 \documentclass[10pt]{article}
-\usepackage[margin=23mm]{geometry}
+\usepackage[margin=21mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{pgfplots}
 \usepackage[hidelinks]{hyperref}
+\pgfplotsset{compat=1.18}
 
-\title{Characterization of Spatial Resolution and Curing Depth in Digital Light Processing 3D Printing}
+% Optional SEM/CAD images will show an explicit placeholder if not yet uploaded.
+% Copy the files into figures/ with the exact names in the calls below.
+\newcommand{\optionalimage}[1]{%
+\IfFileExists{figures/#1}{\includegraphics[width=.96\linewidth]{figures/#1}}{%
+\fbox{\parbox[c][33mm][c]{.88\linewidth}{\centering
+Image pending: \texttt{\detokenize{#1}}\\
+Copy the image to the \texttt{figures/} directory.}}}}
+
+\title{Assessment of Spatial Resolution and Exposure-Dependent Curing Depth in DLP 3D Printing}
 \author{MNFT-3 Laboratory Report}
 \date{}
 
@@ -17,91 +29,238 @@
 \maketitle
 
 \begin{abstract}
-\noindent\textit{To be completed after evaluating the measured XY features, working-curve fit, and printed object. No numerical results have been assumed.}
+Digital light processing (DLP) resin printing was investigated by characterizing the curing-depth working curve and examining periodic XY test structures with scanning electron microscopy (SEM). Twenty exposure-time measurements (1--30 s) were corrected for a 250-$\mu$m glass substrate. A least-squares fit of the 19 positive-depth measurements against the natural logarithm of exposure time yielded an effective optical penetration depth of 146.1~$\mu$m and critical exposure time of 1.75~s ($R^2=0.959$). Preliminary SEM measurements were extracted from Hitachi TM-1000 micrographs. The XY resolution limit remains provisional pending assignment of the SEM regions to the corresponding CAD features.
 \end{abstract}
 
 \section{Introduction}
+Vat photopolymerization builds three-dimensional objects by selectively curing photosensitive resin. In digital light processing (DLP), a digital micromirror device projects an entire cross-sectional exposure pattern at once, unlike scanning-laser stereolithography \cite{bagheri2019photopolymerization}. The reproduction of small structures depends on the projected pixel grid, the optical imaging system, resin absorption, exposure conditions and development of the printed structures \cite{gong2015optical,gong2017custom}.
 
-Vat photopolymerization fabricates three-dimensional objects by selectively curing a photosensitive liquid resin. In digital light processing (DLP) printing, a digital micromirror device spatially modulates the illumination so that an entire layer cross-section can be exposed simultaneously, unlike scanning-laser stereolithography \cite{bagheri2019photopolymerization}. The attainable spatial resolution is not determined by the projected pixel size alone: optical imaging, resin absorption, exposure conditions, and post-processing also affect the fidelity of printed features \cite{gong2015optical,gong2017custom}.
+The objectives of this experiment were to (i) assess the fidelity of periodic XY features, (ii) establish the exposure-dependent curing-depth working curve in the Z direction, and (iii) estimate exposure times necessary to produce selected curing depths. These measurements provide a practical basis for evaluating the printing conditions.
 
-The objective of this experiment was to assess the fidelity of periodically patterned structures in the XY plane and characterize exposure-dependent polymerization in the Z direction. Specifically, printed features were to be compared with their CAD designs, while cured thicknesses measured at different exposure times were to be fitted with a working-curve model. The fitted parameters can then be used to estimate exposure durations for selected cured layer thicknesses.
+\section{Theory}
+\subsection{XY feature fidelity}
+The nominal DLP projected pixel size does not alone determine the minimum printable feature size, because the effective optical intensity distribution and the photopolymerization threshold influence the cured edges. The laboratory guide distinguishes features that preserve the intended geometry, remain identifiable but distorted, or are not resolved.
 
-\section{Theoretical Background}
-
-\subsection{Lateral resolution in DLP printing}
-
-The projected DLP image is discretized into pixels, and the optical projection system determines how sharply the intended pattern reaches the resin. However, feature fidelity also depends on the effective exposure distribution and on resin curing beyond the nominal pattern boundaries. Hence, the experimentally observed minimum feature size must be established from printed test structures, rather than equated directly to the projected pixel pitch \cite{gong2015optical}. Here, the periodic test objects are classified by whether individual structures retain their intended shape, remain distinguishable with distortion, or become indistinguishable.
-
-\subsection{Light penetration and curing-depth working curve}
-
-Under the single-exponential Beer--Lambert approximation, the irradiance at depth $z$ within a resin is
+\subsection{Light penetration and working curve}
+With the single-exponential Beer--Lambert approximation, the irradiance decreases with depth $z$ inside the resin:
 \begin{equation}
-I(z)=I_0\exp(-\alpha z)=I_0\exp(-z/h_a),
-\label{eq:beer_lambert}
+I(z)=I_0 e^{-\alpha z}=I_0e^{-z/h_a}, \qquad h_a=\alpha^{-1}.
+\label{eq:beer}
 \end{equation}
-where $I_0$ is the irradiance at the resin surface, $\alpha$ is the effective attenuation coefficient, and $h_a=1/\alpha$ is the optical penetration depth. For constant irradiance applied for an exposure time $t_p$, the radiant exposure at depth $z$ is
-\begin{equation}
-E(z)=I_0t_p\exp(-z/h_a).
-\label{eq:depth_exposure}
-\end{equation}
-Let $E_c$ denote the critical radiant exposure for curing. Setting $E(z_p)=E_c$ gives the Jacobs working-curve relation \cite{jacobs1992fundamentals}
+Assuming constant irradiation during the exposure time $t_p$ and a critical radiant exposure $E_c$, the Jacobs model gives \cite{jacobs1992fundamentals}
 \begin{equation}
 z_p=h_a\ln\left(\frac{I_0t_p}{E_c}\right)
-    =h_a\ln\left(\frac{t_p}{T_c}\right),
-\qquad T_c=\frac{E_c}{I_0},
-\label{eq:working_curve}
+=h_a\ln\left(\frac{t_p}{T_c}\right), \qquad T_c=\frac{E_c}{I_0}.
+\label{eq:working}
 \end{equation}
-where $z_p$ is the cured depth and $T_c$ is the critical exposure time at the chosen irradiance. Thus, fitting $z_p=m\ln t_p+b$ yields
+The linearized relation is
 \begin{equation}
-h_a=m, \qquad T_c=\exp(-b/m).
-\label{eq:fit_parameters}
+z_p=m\ln(t_p/1\,\mathrm{s})+b, \qquad
+h_a=m,\quad T_c=(1\,\mathrm{s})e^{-b/m}.
+\label{eq:linear}
 \end{equation}
-The exposure time predicted for a target cured depth $z_{\mathrm{target}}$ is
+The predicted time corresponding to target curing depth $z_{\mathrm{target}}$ is
 \begin{equation}
-t_p=T_c\exp\left(\frac{z_{\mathrm{target}}}{h_a}\right).
-\label{eq:target_exposure}
+t_p=T_c\exp(z_{\mathrm{target}}/h_a).
+\label{eq:prediction}
 \end{equation}
-
-This model assumes an approximately constant effective attenuation coefficient and does not fully describe wavelength-dependent absorption, oxygen inhibition, photobleaching or mechanical strength after curing \cite{gong2015optical}. Therefore, the predicted time is a curing-threshold estimate, not necessarily the optimal printing time. The measured curve and its residuals must be inspected before extrapolating to thinner layers.
+These relationships provide a curing-threshold estimate and do not alone establish optimal mechanical strength or layer adhesion.
 
 \section{Experimental Methods}
+\subsection{DLP-printed structures}
+The resolution-test model \texttt{resolution\_test\_XY.stl} spans $10\times10\times1.5$ in the STL coordinate units (assumed mm). It contains periodic bar/square features with nominal lateral dimensions of approximately 50, 75, 100, 150, 200, 300 and 400~$\mu$m. \textit{Pending confirmation: printer model, resin composition, projected pixel size, illumination wavelength, layer thickness, printing settings and cleaning/post-curing conditions.}
 
-\noindent\textit{To be completed from laboratory notes. State the printer, optical wavelength, resin, projected pixel pitch, relevant exposure and layer settings, XY test geometries, scaling factors, measurement method, cleaning/post-curing and working-curve exposure range. Provide only the workflow needed to reproduce what was measured.}
+\subsection{Working-curve measurement}
+Twenty exposure conditions, from 1 to 30~s, were recorded. The height measured with the microscope glass substrate present was corrected by subtracting the 0.025-cm glass thickness:
+\begin{equation}
+z_p[\mu\mathrm{m}]=10^4\left(d_{\mathrm{total}}[\mathrm{cm}]-0.025\,\mathrm{cm}\right).
+\label{eq:glass}
+\end{equation}
+This correction has already been applied in the stored corrected-height data and is \emph{not} applied a second time. The measured thicknesses were reported in 50-$\mu$m increments. A zero-cure observation at 1~s was excluded from the positive-depth regression.
+
+\subsection{SEM imaging}
+Printed samples were imaged using a Hitachi TM-1000 scanning electron microscope. Image calibration from the paired metadata was used for preliminary feature measurements: 0.36719~$\mu$m/pixel at 500$\times$ and 4.58984~$\mu$m/pixel at 40$\times$. \textit{The final XY dimensional comparison will require matching the imaged features with the correct STL pattern and confirming edge placement in ImageJ.}
 
 \section{Results and Discussion}
+\subsection{Measured curing depth versus exposure time}
+Figure~\ref{fig:rawcuring} shows all 20 corrected curing-depth measurements as a function of exposure time on a conventional linear time axis. The fitted model is shown as a logarithmic curve over the positive-depth range. Although the measured depth generally increases with exposure time, some points deviate from strict monotonicity, and the discrete 50-$\mu$m height increments limit the achievable precision.
 
-\subsection{XY feature fidelity}
-
-\noindent\textit{Pending: nominal and measured dimensions, micrographs, classification of successful/distorted/unresolved features, and (where possible) measurement uncertainties. Include a labeled comparison plot.}
-
-\subsection{Curing depth and working-curve fit}
-
-\noindent\textit{Pending: measured $t_p$ (s) and $z_p$ ($\mu$m), semilogarithmic plot with fit, fit parameters $h_a$ ($\mu$m) and $T_c$ (s), uncertainties, and residuals. If irradiance $I_0$ is known, report $E_c=I_0T_c$.}
-
-\begin{table}[ht]
+% FIGURE 1 — conventional, non-linearized plot: directly uses corrected CSV.
+% Regenerate the fit with: python analysis/plot_working_curve.py
+\begin{figure}[tbp]
 \centering
-\caption{Exposure times to be calculated from Eq.~\eqref{eq:target_exposure} after fitting the experimental working curve.}
-\begin{tabular}{cc}
+\begin{tikzpicture}
+\begin{axis}[
+width=.93\linewidth,height=.60\linewidth,
+xlabel={Exposure time $t_p$ (s)},
+ylabel={Cured resin depth $z_p$ ($\mu$m)},
+xmin=0,xmax=31,ymin=-20,ymax=490,
+grid=major,
+legend style={font=\footnotesize,at={(0.97,0.06)},anchor=south east},
+tick label style={font=\small}
+]
+\addplot+[only marks,mark=*,mark size=1.65pt]
+table[col sep=comma,x=exposure_s,y=resin_height_um]
+{data/working_curve_corrected.csv};
+\addlegendentry{Experimental data}
+\addplot+[no marks,thick,domain=1.746:30,samples=150]
+{146.122087*ln(x)-81.424785};
+\addlegendentry{Logarithmic fit}
+\end{axis}
+\end{tikzpicture}
+\caption{Corrected polymerized resin height versus exposure time, with the logarithmic Jacobs working-curve fit. The 1-s point has zero observed cured thickness and was not included in the regression.}
+\label{fig:rawcuring}
+\end{figure}
+
+\subsection{Linearized working curve}
+Fitting the 19 positive-depth values against $\ln(t_p/1\,\mathrm{s})$ gives
+\begin{equation}
+z_p[\mu\mathrm{m}]=146.12\ln(t_p/1\,\mathrm{s})-81.42.
+\label{eq:fit}
+\end{equation}
+Accordingly, $h_a=146.12~\mu$m and $T_c=1.746$~s, with $R^2=0.9592$. Figure~\ref{fig:linearcuring} displays the linearized fit and Fig.~\ref{fig:residuals} shows the residuals. The 50-$\mu$m measurement increments and possible systematic errors in thickness measurements should be considered when interpreting more digits in the fitted parameters.
+
+% FIGURE 2 — linearized plot. CSV generated by the Python analysis script.
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+width=.93\linewidth,height=.60\linewidth,
+xlabel={$\ln(t_p/1\,\mathrm{s})$},
+ylabel={Cured resin depth $z_p$ ($\mu$m)},
+xmin=-.1,xmax=3.55,ymin=-20,ymax=490,
+grid=major,
+legend style={font=\footnotesize,at={(0.03,0.97)},anchor=north west},
+tick label style={font=\small}
+]
+\addplot+[only marks,mark=*,mark size=1.65pt]
+table[col sep=comma,x=ln_t_s,y=z_um]
+{data/working_curve_fit.csv};
+\addlegendentry{Positive-depth data}
+\addplot+[no marks,thick,domain=.557:3.5,samples=150]
+{146.122087*x-81.424785};
+\addlegendentry{Linear regression}
+\addplot+[only marks,mark=x,mark size=2.8pt] coordinates {(0,0)};
+\addlegendentry{No cure at 1 s}
+\end{axis}
+\end{tikzpicture}
+\caption{Linearized working curve. The slope provides $h_a$; the zero-depth intercept provides $T_c$. The non-cured 1-s point is shown for context but excluded from the fit.}
+\label{fig:linearcuring}
+\end{figure}
+
+% FIGURE 3 — residuals corresponding to the same fitted observations.
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+width=.93\linewidth,height=.48\linewidth,
+xlabel={$\ln(t_p/1\,\mathrm{s})$},
+ylabel={Fit residual ($\mu$m)},
+xmin=.5,xmax=3.55,grid=major,
+tick label style={font=\small}
+]
+\addplot+[only marks,mark=*]
+table[col sep=comma,x=ln_t_s,y=residual_um]
+{data/working_curve_fit.csv};
+\addplot+[black,no marks,domain=.5:3.55] {0};
+\end{axis}
+\end{tikzpicture}
+\caption{Residuals $z_p-z_{\mathrm{fit}}$ for the positive-depth data.}
+\label{fig:residuals}
+\end{figure}
+
+Table~\ref{tab:times} reports the exposure times calculated using Eq.~\eqref{eq:prediction}. They describe expected \emph{threshold curing} depths and are not independently verified optimal printer settings.
+
+\begin{table}[tbp]
+\centering
+\caption{Predicted exposure times from the preliminary curing-depth fit.}
+\label{tab:times}
+\begin{tabular}{@{}cc@{}}
 \toprule
-Target cured depth ($\mu$m) & Predicted exposure time (s) \\
+Target cured thickness ($\mu$m) & Exposure time (s)\\
 \midrule
-25 & --- \\
-50 & --- \\
-75 & --- \\
-100 & --- \\
-125 & --- \\
-150 & --- \\
+25 & 2.07\\
+50 & 2.46\\
+75 & 2.92\\
+100 & 3.46\\
+125 & 4.11\\
+150 & 4.87\\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\subsection{Printed object}
+\subsection{Preliminary SEM measurements of XY test structures}
+Image 7176 at 500$\times$ contains two dark openings whose preliminary internal horizontal widths were estimated to be 73.6 and 79.2~$\mu$m, with an apparent centre-to-centre distance of 227.6~$\mu$m (Fig.~\ref{fig:semholes}). At 40$\times$, image 7179 shows bars with apparent widths of 592.1, 523.2, 582.9 and 518.7~$\mu$m and gaps of 261.6, 73.4 and 55.1~$\mu$m (Fig.~\ref{fig:sembars}). The dimensions depend on the selection of SEM image edges; the latter is especially sensitive at low magnification.
 
-\noindent\textit{Pending: brief description, photograph, fabrication settings and observed deviations from the CAD geometry.}
+% FIGURE 4 — add the provided annotated micrograph to figures/.
+\begin{figure}[tbp]
+\centering
+\optionalimage{SEM_7176_annotated.png}
+\caption{Hitachi TM-1000 SEM image (500$\times$) annotated with two preliminary inner-aperture measurements.}
+\label{fig:semholes}
+\end{figure}
+
+% FIGURE 5 — add the annotated image to figures/.
+\begin{figure}[tbp]
+\centering
+\optionalimage{SEM_7179_annotated.png}
+\caption{Hitachi TM-1000 SEM image (40$\times$) annotated with preliminary bar widths and gaps.}
+\label{fig:sembars}
+\end{figure}
+
+% FIGURE 6 — add the CAD-section illustration to figures/.
+\begin{figure}[tbp]
+\centering
+\optionalimage{stl_sections.png}
+\caption{Cross-sections of the nominal XY test STL used to assess lateral feature reproduction.}
+\label{fig:stl}
+\end{figure}
+
+\begin{table}[tbp]
+\centering
+\caption{Selected apparent SEM dimensions; provisional until features are matched to nominal CAD geometry.}
+\label{tab:sem}
+\begin{tabular}{@{}lrl@{}}
+\toprule
+Feature & Size ($\mu$m) & Image\\
+\midrule
+Inner opening H1 & 73.6 & 7176, 500$\times$\\
+Inner opening H2 & 79.2 & 7176, 500$\times$\\
+Opening pitch & 227.6 & 7176, 500$\times$\\
+Bar B1 & 592.1 & 7179, 40$\times$\\
+Bar B2 & 523.2 & 7179, 40$\times$\\
+Bar B3 & 582.9 & 7179, 40$\times$\\
+Bar B4 & 518.7 & 7179, 40$\times$\\
+Gap B1--B2 & 261.6 & 7179, 40$\times$\\
+Gap B2--B3 & 73.4 & 7179, 40$\times$\\
+Gap B3--B4 & 55.1 & 7179, 40$\times$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+These measurements should not yet be treated as percentage errors relative to the STL or used to claim a resolved minimum XY feature width. That assessment requires mapping SEM features to the correct CAD regions and repeating measurements in ImageJ.
+
+% OPTIONAL FUTURE FIGURE — uncomment when the paired XY measurements are ready.
+% \begin{figure}[tbp]
+% \centering
+% \optionalimage{xy_nominal_vs_measured.png}
+% \caption{Nominal CAD versus SEM-measured lateral feature dimensions.}
+% \label{fig:xycompare}
+% \end{figure}
+
+\subsection{Additional printed object}
+\textit{Pending: details and photograph of the additional printed object, printing parameters, and assessment of printing fidelity.}
+
+% OPTIONAL FUTURE FIGURE — uncomment when a photograph is ready.
+% \begin{figure}[tbp]
+% \centering
+% \optionalimage{printed_object.png}
+% \caption{Photograph of the separately printed object.}
+% \label{fig:printedobject}
+% \end{figure}
 
 \section{Conclusions}
-
-\noindent\textit{To be written after analysis. Report the measured XY performance, fitted optical and critical exposure parameters, limits of the model, and the quality of the printed object.}
+The measured working curve was reasonably well described by a logarithmic curing-depth model, yielding a provisional penetration depth of about 146~$\mu$m and critical time of about 1.75~s under the experimental conditions. A conventional depth-versus-time graph illustrates the nonlinear growth in cure depth, while the linearized graph supports parameter extraction. The fitted relation predicts curing-threshold times for target thicknesses from 25 to 150~$\mu$m. SEM images provide preliminary XY dimensions; a definitive lateral resolution assessment requires matching these features to the CAD pattern and reviewing edge selection and uncertainty.
 
 \bibliographystyle{unsrt}
 \bibliography{references}
