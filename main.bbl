@@ -1,0 +1,29 @@
+\begin{thebibliography}{1}
+
+\bibitem{bagheri2019photopolymerization}
+Ali Bagheri and Jianyong Jin.
+\newblock Photopolymerization in 3d printing.
+\newblock {\em ACS Applied Polymer Materials}, 1(4):593--611, 2019.
+
+\bibitem{gong2015optical}
+Hua Gong, Michael Beauchamp, Steven Perry, Adam~T. Woolley, and Gregory~P. Nordin.
+\newblock Optical approach to resin formulation for 3d printed microfluidics.
+\newblock {\em RSC Advances}, 5(129):106621--106632, 2015.
+
+\bibitem{gong2017custom}
+Hua Gong, Bryce~P. Bickham, Adam~T. Woolley, and Gregory~P. Nordin.
+\newblock Custom 3d printer and resin for 18 {$\mu$m} {$\times$} 20 {$\mu$m} microfluidic flow channels.
+\newblock {\em Lab on a Chip}, 17(17):2899--2909, 2017.
+
+\bibitem{vilnius2020mnft3}
+{Vilnius University, Faculty of Physics, Laser Research Center}.
+\newblock {\em {Laboratory Assignment No. MNFT-3}: Assessment of the Spatial Resolution in Z Axis of the Digital Light Processing-Based 3D Printing Employing Beer--Lambert Law}.
+\newblock Vilnius University, Vilnius, Lithuania, 2020.
+\newblock Laboratory assignment handout for master's students.
+
+\bibitem{jacobs1992fundamentals}
+Paul~F. Jacobs.
+\newblock Fundamentals of stereolithography.
+\newblock In {\em Proceedings of the Solid Freeform Fabrication Symposium}, pages 196--211, Austin, Texas, 1992.
+
+\end{thebibliography}
