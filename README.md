@@ -1,25 +1,37 @@
 # MNFT-3 — DLP 3D Printing Laboratory Report
 
-Preliminary scientific draft prepared from:
-- Vilnius University, *Laboratory assignment No. MNFT-3: Assessment of the Spatial Resolution in Z Axis of the Digital Light Processing-Based 3D Printing Employing Beer–Lambert Law* (2020);
-- *How to take a working curve measurement and create exposure settings from it* (working-curve measurement annex).
+The project contains a preliminary LaTeX manuscript in `main.tex` with the objective, short theoretical background, measured curing-depth analysis, experimental and linearized graphs, residuals, target-depth exposure table, provisional SEM measurements, and figure placeholders.
 
-## Status
-The introduction and working-curve theory are drafted. **No experimental measurements have been entered**. The abstract, actual equipment and resin parameters, plots, results, discussion and conclusions must be completed from the student's laboratory records.
+## References
+The bibliography in `references.bib` cites peer-reviewed articles, Jacobs' stereolithography paper, and the primary Vilnius University lab guide:
 
-`main.tex` uses a standard article class **temporarily**. Once the exact Optica/Optics Express class and style files used in the previous Fresnel report are available, the document can be adapted without changing its scientific content.
+*Vilnius University, Faculty of Physics, Laser Research Center, Laboratory Assignment No. MNFT-3: Assessment of the Spatial Resolution in Z Axis of the Digital Light Processing-Based 3D Printing Employing Beer–Lambert Law*, Vilnius (2020).
 
-## Data to add
-- Printer/model, DLP projected pixel size, illumination wavelength and (if known) resin-plane irradiance.
-- Resin name, selected layer height, exposure settings, washing and post-curing protocol.
-- Nominal XY model dimensions, scale factors, microscope images and measured feature dimensions.
-- Exposure-time series (s) and cured thicknesses (µm), including measurement uncertainties.
-- Images of the final object and notes on fabrication fidelity.
+## Data and figures
+- `data/working_curve_corrected.csv`: twenty times and thicknesses (glass already subtracted in the corrected-height column).
+- `data/working_curve_fit.csv`: fit values and residuals for LaTeX figures.
+- `data/SEM_measurements_preliminary.csv`: preliminary projected SEM measurements (not yet matched to CAD).
+- `analysis/plot_working_curve.py`: regenerates the conventional curing-depth versus time graph, linearized graph, residuals, and fit CSV.
+- `figures/SEM_7176_annotated.png`, `figures/SEM_7179_annotated.png`, `figures/stl_sections.png`: referenced by LaTeX but not yet uploaded; missing-image placeholders are shown automatically.
 
-## Required analysis
-- XY fidelity and the smallest distinguishable positive/negative structures.
-- Working curve: plot cure depth against log exposure time, fit the Jacobs/Beer–Lambert model, extract optical penetration depth and critical exposure time.
-- Predict times for 25, 50, 75, 100, 125 and 150 µm cure depths; distinguish predicted cure threshold from reliable printing conditions.
+To regenerate analysis:
 
-## Bibliography
-Published references have been verified. This draft does not claim unmeasured performance values.
+~~~bash
+python -m pip install numpy matplotlib
+python analysis/plot_working_curve.py
+~~~
+
+To compile, use a LaTeX installation with `pgfplots`, `booktabs`, and `lmodern`:
+
+~~~bash
+pdflatex main.tex
+bibtex main
+pdflatex main.tex
+pdflatex main.tex
+~~~
+
+## Outstanding experimental details
+
+Confirm the printer model, resin, illumination wavelength, projected pixel dimensions, exposure conditions and sample preparation. Assign the SEM images to specific features in the original STL and verify edge positions using ImageJ. Add photographs and parameters for the additional printed object.
+
+The fit parameters **h_a ≈ 146 µm**, **T_c ≈ 1.75 s**, **R² ≈ 0.959** are provisional. Height measurements were recorded in 50-µm increments; predicted exposure times are curing-threshold estimates, not independently validated print settings. The exact Optica/Optics Express template will replace the temporary standard article class once available.
