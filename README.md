@@ -8,7 +8,7 @@ The bibliography in `references.bib` cites peer-reviewed articles, Jacobs' stere
 *Vilnius University, Faculty of Physics, Laser Research Center, Laboratory Assignment No. MNFT-3: Assessment of the Spatial Resolution in Z Axis of the Digital Light Processing-Based 3D Printing Employing Beer–Lambert Law*, Vilnius (2020).
 
 ## University logo and layout
-The first-page header now uses `figures/vu_logo_burgundy.svg` (burgundy vector emblem `#78003F`). The official university [brand guide](https://www.vu.lt/en/vu-brand-style-guidelines) specifies this colour. The artwork was adapted from the [verified Vilnius University emblem in ICPC logos](https://github.com/WISVCH/icpc-logos/blob/main/universities/logos/2643.svg). The black PNG is retained only for historical reference. LaTeX uses the `svg` package to convert SVG with Inkscape, requiring **Inkscape and shell escape**.
+The first-page header uses `figures/vu_logo_burgundy.png`, a ready-to-use burgundy Vilnius University emblem and English wordmark, sourced from a [Vilnius University presentation project](https://github.com/00riddle00/MSc1-Functional-Data-Analysis/blob/main/Presentations/vu_logo.png). The image retains its original proportions, and the separate faculty name is placed beside it. **No SVG package, Inkscape or shell escape is needed.** The older black PNG and burgundy SVG are retained as unused reference assets.
 
 ## Data and figures
 - `data/working_curve_corrected.csv`: twenty times and thicknesses (glass already subtracted in the corrected-height column).
@@ -25,13 +25,13 @@ python -m pip install numpy matplotlib
 python analysis/plot_working_curve.py
 ~~~
 
-To compile, use a LaTeX installation with `svg`, `pgfplots`, `booktabs`, and `lmodern`, plus Inkscape:
+To compile, use a standard LaTeX installation with `pgfplots`, `booktabs`, and `lmodern`. Inkscape is not needed:
 
 ~~~bash
-pdflatex -shell-escape main.tex
+pdflatex main.tex
 bibtex main
-pdflatex -shell-escape main.tex
-pdflatex -shell-escape main.tex
+pdflatex main.tex
+pdflatex main.tex
 ~~~
 
 ## Outstanding experimental details
