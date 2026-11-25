@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.2)  25 NOV 2026 15:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.2)  25 NOV 2026 16:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -685,7 +685,7 @@ Package hyperref Info: Link coloring OFF on input line 45.
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-<figures/vu_logo_burgundy.png, id=63, 250.9375pt x 130.4875pt>
+<figures/vu_logo_burgundy.png, id=67, 250.9375pt x 130.4875pt>
 File: figures/vu_logo_burgundy.png Graphic file (type png)
 <use figures/vu_logo_burgundy.png>
 Package pdftex.def Info: figures/vu_logo_burgundy.png  used on input line 72.
@@ -716,7 +716,11 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 72.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 72.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 110.
+ [1{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}
+
+
+{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc} <./figures/vu_logo_burgundy.png>]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 115.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -724,22 +728,17 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-<figures/xy_resolution_3d_perspective.png, id=72, 672.5125pt x 582.175pt>
+<figures/xy_resolution_3d_perspective.png, id=110, 672.5125pt x 582.175pt>
 File: figures/xy_resolution_3d_perspective.png Graphic file (type png)
 <use figures/xy_resolution_3d_perspective.png>
-Package pdftex.def Info: figures/xy_resolution_3d_perspective.png  used on input line 114.
+Package pdftex.def Info: figures/xy_resolution_3d_perspective.png  used on input line 119.
 (pdftex.def)             Requested size: 245.97409pt x 212.93182pt.
+PGFPlots: reading {data/working_curve_corrected.csv}
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[1{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}
-
-
-{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc} <./figures/vu_logo_burgundy.png>]
-PGFPlots: reading {data/working_curve_corrected.csv}
 PGFPlots: reading {data/working_curve_fit.csv}
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -748,39 +747,48 @@ PGFPlots: reading {data/working_curve_fit.csv}
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [2 <./figures/xy_resolution_3d_perspective.png>]
-<figures/TM-1000_7182(x40).jpg, id=129, 670.33043pt x 544.64348pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/TM-1000_7182(x40).jpg, id=137, 670.33043pt x 544.64348pt>
 File: figures/TM-1000_7182(x40).jpg Graphic file (type jpg)
 <use figures/TM-1000_7182(x40).jpg>
-Package pdftex.def Info: figures/TM-1000_7182(x40).jpg  used on input line 259.
+Package pdftex.def Info: figures/TM-1000_7182(x40).jpg  used on input line 264.
 (pdftex.def)             Requested size: 231.21623pt x 187.86064pt.
-<figures/SEM_7176_annotated.jpg, id=130, 670.33043pt x 544.64348pt>
+<figures/SEM_7176_annotated.jpg, id=138, 670.33043pt x 544.64348pt>
 File: figures/SEM_7176_annotated.jpg Graphic file (type jpg)
 <use figures/SEM_7176_annotated.jpg>
-Package pdftex.def Info: figures/SEM_7176_annotated.jpg  used on input line 260.
+Package pdftex.def Info: figures/SEM_7176_annotated.jpg  used on input line 265.
 (pdftex.def)             Requested size: 231.21623pt x 187.86064pt.
-<figures/SEM_7179_annotated.jpg, id=131, 670.33043pt x 544.64348pt>
+<figures/SEM_7179_annotated.jpg, id=139, 670.33043pt x 544.64348pt>
 File: figures/SEM_7179_annotated.jpg Graphic file (type jpg)
 <use figures/SEM_7179_annotated.jpg>
-Package pdftex.def Info: figures/SEM_7179_annotated.jpg  used on input line 261.
+Package pdftex.def Info: figures/SEM_7179_annotated.jpg  used on input line 266.
 (pdftex.def)             Requested size: 231.21623pt x 187.86064pt.
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 271.
+(Font)              <8> on input line 276.
+[3]
+<figures/TM-1000_7180(x40).jpg, id=152, 670.33043pt x 544.64348pt>
+File: figures/TM-1000_7180(x40).jpg Graphic file (type jpg)
+<use figures/TM-1000_7180(x40).jpg>
+Package pdftex.def Info: figures/TM-1000_7180(x40).jpg  used on input line 295.
+(pdftex.def)             Requested size: 236.13676pt x 191.85803pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figures/bowser.jpeg, id=134, 1705.37125pt x 1509.64pt>
+<figures/bowser.jpeg, id=155, 1705.37125pt x 1509.64pt>
 File: figures/bowser.jpeg Graphic file (type jpg)
 <use figures/bowser.jpeg>
-Package pdftex.def Info: figures/bowser.jpeg  used on input line 293.
+Package pdftex.def Info: figures/bowser.jpeg  used on input line 307.
 (pdftex.def)             Requested size: 231.21623pt x 204.66794pt.
-<figures/hubble_telescope.jpeg, id=135, 1964.33875pt x 2094.82625pt>
+<figures/hubble_telescope.jpeg, id=156, 1964.33875pt x 2094.82625pt>
 File: figures/hubble_telescope.jpeg Graphic file (type jpg)
 <use figures/hubble_telescope.jpeg>
-Package pdftex.def Info: figures/hubble_telescope.jpeg  used on input line 294.
+Package pdftex.def Info: figures/hubble_telescope.jpeg  used on input line 308.
 (pdftex.def)             Requested size: 231.21623pt x 246.57364pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -790,7 +798,7 @@ Underfull \hbox (badness 1990) in paragraph at lines 9--12
 []\T1/lmr/m/n/10 (+20) Hua Gong, Michael Beauchamp, Steven Perry,
  []
 
-[3]) [4 <./figures/TM-1000_7182(x40).jpg> <./figures/SEM_7176_annotated.jpg> <./figures/SEM_7179_annotated.jpg>] [5
+) [4] [5 <./figures/TM-1000_7182(x40).jpg> <./figures/SEM_7176_annotated.jpg> <./figures/SEM_7179_annotated.jpg> <./figures/TM-1000_7180(x40).jpg>] [6
 
  <./figures/bowser.jpeg> <./figures/hubble_telescope.jpeg>] (./main.aux)
  ***********
@@ -798,21 +806,21 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 0F5559415399F64B5A8ED536DEEBDF44;2263.
+(rerunfilecheck)             Checksum: 5915A2CB894FEEEF1A7DB946A7C1FFC1;2485.
  ) 
 Here is how much of TeX's memory you used:
- 33716 strings out of 467525
- 782047 string characters out of 5418983
- 1381047 words of memory out of 5000000
- 61914 multiletter control sequences out of 15000+600000
- 694605 words of font info for 149 fonts, out of 8000000 for 9000
+ 33746 strings out of 467525
+ 782543 string characters out of 5418983
+ 1389410 words of memory out of 5000000
+ 61923 multiletter control sequences out of 15000+600000
+ 695367 words of font info for 158 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,19n,108p,1154b,2262s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (5 pages, 1215950 bytes).
+Output written on main.pdf (6 pages, 1365273 bytes).
 PDF statistics:
- 269 PDF objects out of 1000 (max. 8388607)
- 205 compressed objects within 3 object streams
- 40 named destinations out of 1000 (max. 500000)
- 37536 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 285 PDF objects out of 1000 (max. 8388607)
+ 219 compressed objects within 3 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 37549 words of extra memory for PDF output out of 42996 (max. 10000000)
 

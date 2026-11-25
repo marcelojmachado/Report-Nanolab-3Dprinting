@@ -343,6 +343,12 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/lmsy9.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/lmsy6.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/ec-lmr12.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
+INPUT /usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
+INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmtt.fd
 INPUT /usr/local/texlive/2026/texmf-dist/tex/latex/lm/t1lmtt.fd
@@ -352,12 +358,6 @@ INPUT ./figures/xy_resolution_3d_perspective.png
 INPUT ./figures/xy_resolution_3d_perspective.png
 INPUT ./figures/xy_resolution_3d_perspective.png
 INPUT ./figures/xy_resolution_3d_perspective.png
-INPUT /usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc
-INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
 INPUT data/working_curve_corrected.csv
 INPUT data/working_curve_fit.csv
 INPUT data/working_curve_fit.csv
@@ -377,6 +377,10 @@ INPUT ./figures/SEM_7179_annotated.jpg
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/rm-lmr8.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/lmmi8.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/lmsy8.tfm
+INPUT ./figures/TM-1000_7180(x40).jpg
+INPUT ./figures/TM-1000_7180(x40).jpg
+INPUT ./figures/TM-1000_7180(x40).jpg
+INPUT ./figures/TM-1000_7180(x40).jpg
 INPUT ./figures/bowser.jpeg
 INPUT ./figures/bowser.jpeg
 INPUT ./figures/bowser.jpeg
