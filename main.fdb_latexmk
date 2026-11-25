@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1795543987.23135 "main.aux" "main.bbl" "main" 1795543988.78165 0
+["bibtex main"] 1795543987.23135 "main.aux" "main.bbl" "main" 1795609625.64543 0
   "./references.bib" 1795541252.66363 1871 df073188670f62097eb91b45afd44c73 ""
   "/usr/local/texlive/2026/texmf-dist/bibtex/bst/base/unsrt.bst" 1292289607 18030 1376b4b231b50c66211e47e42eda2875 ""
-  "main.aux" 1795543988.5 6103 3422b83a4f287ea362755628c1e59014 "pdflatex"
+  "main.aux" 1795609625.40065 6103 3422b83a4f287ea362755628c1e59014 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1795543987.33058 "/Users/marcelomachado/Documents/EUROPHOTONICS/Course/S3 (Vilnius)/Micro-Nano Structuring Technologies/Labs/Report/3Dprinting/Report-Nanolab-3Dprinting/main.tex" "main.pdf" "main" 1795543988.7818 0
-  "/Users/marcelomachado/Documents/EUROPHOTONICS/Course/S3 (Vilnius)/Micro-Nano Structuring Technologies/Labs/Report/3Dprinting/Report-Nanolab-3Dprinting/main.tex" 1795543985.49457 16345 dc61100369a161b005ffde9432baebad ""
+["pdflatex"] 1795609624.28731 "/Users/marcelomachado/Documents/EUROPHOTONICS/Course/S3 (Vilnius)/Micro-Nano Structuring Technologies/Labs/Report/3Dprinting/Report-Nanolab-3Dprinting/main.tex" "main.pdf" "main" 1795609625.64552 0
+  "/Users/marcelomachado/Documents/EUROPHOTONICS/Course/S3 (Vilnius)/Micro-Nano Structuring Technologies/Labs/Report/3Dprinting/Report-Nanolab-3Dprinting/main.tex" 1795609624.12232 16347 db30ffe549fedec86b7aaace17fb11b8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -234,12 +234,14 @@
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
   "data/working_curve_corrected.csv" 1795539982.33165 415 3041c75140ab9402c2ae32b98cd3d4a5 ""
   "data/working_curve_fit.csv" 1795541092.86088 794 db3ce3e83f6d4d2824e5696d585eacd5 ""
+  "figures/SEM_7176_annotated.jpg" 1792744022 164502 5700963bfef29cd07de26fcc82c03fdd ""
+  "figures/SEM_7179_annotated.jpg" 1792744638 140842 5a22ee9d700da8e205af25677af60391 ""
   "figures/vu_logo_burgundy.png" 1795543117.76514 15661 66d9eec4ea743def856b2995d3241c30 ""
   "figures/xy_resolution_3d_perspective.png" 1795543818.55562 8264 8faf345c7a52b334f85358656351f481 ""
-  "main.aux" 1795543988.5 6103 3422b83a4f287ea362755628c1e59014 "pdflatex"
+  "main.aux" 1795609625.40065 6103 3422b83a4f287ea362755628c1e59014 "pdflatex"
   "main.bbl" 1795543987.32695 1336 28879a4c4965c61a0b1a0bf4629293d3 "bibtex main"
-  "main.out" 1795543988.50082 2434 8d7ea6882dbb523841bc135d6a88ad06 "pdflatex"
-  "main.tex" 1795543985.49457 16345 dc61100369a161b005ffde9432baebad ""
+  "main.out" 1795609625.40153 2434 8d7ea6882dbb523841bc135d6a88ad06 "pdflatex"
+  "main.tex" 1795609624.12232 16347 db30ffe549fedec86b7aaace17fb11b8 ""
   (generated)
   "main.aux"
   "main.log"

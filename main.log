@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.2)  24 NOV 2026 20:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.2)  25 NOV 2026 14:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -719,6 +719,16 @@ PGFPlots: reading {data/working_curve_corrected.csv}
 PGFPlots: reading {data/working_curve_fit.csv}
 PGFPlots: reading {data/working_curve_fit.csv}
  [2 <./figures/xy_resolution_3d_perspective.png>]
+<figures/SEM_7176_annotated.jpg, id=127, 670.33043pt x 544.64348pt>
+File: figures/SEM_7176_annotated.jpg Graphic file (type jpg)
+<use figures/SEM_7176_annotated.jpg>
+Package pdftex.def Info: figures/SEM_7176_annotated.jpg  used on input line 245.
+(pdftex.def)             Requested size: 235.86697pt x 191.64195pt.
+<figures/SEM_7179_annotated.jpg, id=128, 670.33043pt x 544.64348pt>
+File: figures/SEM_7179_annotated.jpg Graphic file (type jpg)
+<use figures/SEM_7179_annotated.jpg>
+Package pdftex.def Info: figures/SEM_7179_annotated.jpg  used on input line 249.
+(pdftex.def)             Requested size: 235.86697pt x 191.64195pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 260.
  (./main.bbl
@@ -726,7 +736,7 @@ Underfull \hbox (badness 1990) in paragraph at lines 9--12
 []\T1/lmr/m/n/10 (+20) Hua Gong, Michael Beauchamp, Steven Perry,
  []
 
-) [3] [4] (./main.aux)
+) [3] [4 <./figures/SEM_7176_annotated.jpg> <./figures/SEM_7179_annotated.jpg>] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -735,18 +745,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 8D7EA6882DBB523841BC135D6A88AD06;2434.
  ) 
 Here is how much of TeX's memory you used:
- 33502 strings out of 467525
- 778374 string characters out of 5418983
- 1383319 words of memory out of 5000000
- 61722 multiletter control sequences out of 15000+600000
+ 33506 strings out of 467525
+ 778632 string characters out of 5418983
+ 1380154 words of memory out of 5000000
+ 61726 multiletter control sequences out of 15000+600000
  691252 words of font info for 143 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,19n,118p,1154b,2277s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (4 pages, 336029 bytes).
+Output written on main.pdf (4 pages, 638747 bytes).
 PDF statistics:
- 241 PDF objects out of 1000 (max. 8388607)
+ 243 PDF objects out of 1000 (max. 8388607)
  189 compressed objects within 2 object streams
  38 named destinations out of 1000 (max. 500000)
- 35463 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 35473 words of extra memory for PDF output out of 35830 (max. 10000000)
 

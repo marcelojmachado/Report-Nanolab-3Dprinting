@@ -358,6 +358,14 @@ INPUT /usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
 INPUT data/working_curve_corrected.csv
 INPUT data/working_curve_fit.csv
 INPUT data/working_curve_fit.csv
+INPUT ./figures/SEM_7176_annotated.jpg
+INPUT ./figures/SEM_7176_annotated.jpg
+INPUT ./figures/SEM_7176_annotated.jpg
+INPUT ./figures/SEM_7176_annotated.jpg
+INPUT ./figures/SEM_7179_annotated.jpg
+INPUT ./figures/SEM_7179_annotated.jpg
+INPUT ./figures/SEM_7179_annotated.jpg
+INPUT ./figures/SEM_7179_annotated.jpg
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/rm-lmr8.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/lmmi8.tfm
 INPUT /usr/local/texlive/2026/texmf-dist/fonts/tfm/public/lm/lmsy8.tfm
