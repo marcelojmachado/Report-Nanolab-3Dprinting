@@ -66,17 +66,20 @@ Copy the image to the \texttt{figures/} directory.}}}}
 }
 \vspace{3mm}
 \noindent\textbf{Abstract.}\enspace
-{\small The spatial resolution of digital light processing (DLP) 3D printing was studied using scanning electron microscopy (SEM) and measurements of curing depth. Twenty measurements at exposure times from 1 to 30~s were corrected for the thickness of the 250~$\mu$m glass substrate. A fit to the 19 measurements with positive curing depth gave an optical penetration depth of 146.1~$\mu$m and a critical exposure time of 1.75~s ($R^2=0.959$). The SEM measurements suggest an XY resolution of about 75~$\mu$m. A gap close to 50~$\mu$m was also observed, but with lower confidence. The small square openings became rounded after printing.\par}
+{\small The spatial resolution of digital light processing (DLP) 3D printing was studied using scanning electron microscopy (SEM) and measurements of curing depth. Twenty measurements at exposure times from 1 to 30~s were corrected for the thickness of the 250~$\mu$m glass substrate. A fit to the 19 measurements with positive curing depth gave an effective penetration depth of $(146.1\pm7.3)$~$\mu$m and a critical exposure time of $(1.75\pm0.17)$~s ($R^2=0.959$), with uncertainties from the fit. Features with estimated nominal dimensions of 75~$\mu$m were consistently distinguishable in the SEM images. A gap close to 50~$\mu$m was also observed, but with lower confidence. Small square openings became rounded, and a rectangular groove was not properly reproduced.\par}
 \vspace{4mm}
 \end{minipage}
 }]
 \thispagestyle{plain} % Avoid repeating the university name above the first-page logo.
 \section{Introduction}
-Vat photopolymerization builds 3D objects by selectively curing photosensitive resin. In digital light processing (DLP), a digital micromirror device projects an entire layer pattern at once, unlike stereolithography with a scanning laser \cite{bagheri2019photopolymerization}. The reproduction of small structures depends on the projected pixel grid, the optical imaging system, resin absorption, exposure conditions and development of the printed structures \cite{gong2015optical,gong2017custom}.
+Vat photopolymerization builds 3D objects by selectively curing photosensitive resin. In digital light processing (DLP) stereolithography, a digital micromirror device projects an entire layer pattern at once, unlike laser scanning stereolithography \cite{bagheri2019photopolymerization}. The reproduction of small structures depends on the projected pixel grid, the optical imaging system, resin absorption, exposure conditions and development of the printed structures \cite{gong2015optical,gong2017custom}.
 
 The objectives of this experiment, following the Vilnius University MNFT-3 laboratory assignment \cite{vilnius2020mnft3}, were to (i) assess the fidelity of periodic XY features, (ii) establish the relationship between curing depth and exposure time in the Z direction, and (iii) estimate exposure times necessary to produce selected curing depths. These measurements provide a practical basis for evaluating the printing conditions.
 
 \section{Theory}
+\subsection{DLP and laser stereolithography}
+In both techniques, a CAD model is divided into layers that are selectively cured in a photosensitive resin. In laser stereolithography, a focused laser spot scans the cross-section of each layer. In DLP, a digital micromirror device (DMD) directs light towards or away from the resin to form the projected layer pattern. Simultaneous exposure of the whole layer can reduce printing time compared with scanning. However, the projected pixel size and the imaging optics limit the lateral resolution of DLP, while the focused spot size is an important limit in laser stereolithography \cite{vilnius2020mnft3}.
+
 \subsection{XY feature fidelity}
 The nominal DLP projected pixel size does not alone determine the minimum printable feature size, because the effective optical intensity distribution and the photopolymerization threshold influence the cured edges. The laboratory guide \cite{vilnius2020mnft3} distinguishes features that preserve the intended geometry, remain identifiable but distorted, or are not resolved.
 
@@ -86,12 +89,14 @@ With the Beer--Lambert law, the irradiance decreases with depth $z$ inside the r
 I(z)=I_0 e^{-\alpha z}=I_0e^{-z/h_a}, \qquad h_a=\alpha^{-1}.
 \label{eq:beer}
 \end{equation}
-Assuming constant irradiation during the exposure time $t_p$ and a critical radiant exposure $E_c$, the Jacobs model gives \cite{jacobs1992fundamentals}
+Here, $\alpha$ is the absorption coefficient and $h_a$ is the depth at which the irradiance decreases to $I_0/e$. Following the laboratory guide, the energy dose at depth $z$ is $D(z,t_p)=t_p I(z)$ for constant irradiation. Curing requires a critical energy dose $D_c$. At the curing boundary $z_p$, $D(z_p,t_p)=D_c$. This gives the Jacobs working curve \cite{vilnius2020mnft3,jacobs1992fundamentals}
 \begin{equation}
-z_p=h_a\ln\left(\frac{I_0t_p}{E_c}\right)
-=h_a\ln\left(\frac{t_p}{T_c}\right), \qquad T_c=\frac{E_c}{I_0}.
+z_p=h_a\ln\left(\frac{I_0t_p}{D_c}\right)
+=h_a\ln\left(\frac{t_p}{T_c}\right), \qquad T_c=\frac{D_c}{I_0}.
 \label{eq:working}
 \end{equation}
+The critical exposure time $T_c$ is the time required to reach the curing threshold at the resin surface ($z_p=0$). At a fixed irradiance, the penetration depth and critical exposure time determine the exposure needed to cure a given thickness. The simple exponential absorption model assumes monochromatic light or an approximately constant absorption coefficient over the illumination spectrum \cite{vilnius2020mnft3}. Since the spectrum and resin type were not recorded, the fitted $h_a$ is treated as an effective penetration depth.
+
 The linearized relation is
 \begin{equation}
 z_p=m\ln(t_p/1\,\mathrm{s})+b, \qquad
@@ -119,7 +124,7 @@ The model \texttt{resolution\_test\_XY.stl} has overall dimensions of $10\times1
 \subsection{Measurement of the working curve}
 Following the procedure described in the MNFT-3 guide \cite{vilnius2020mnft3}, liquid resin was placed on a thin microscope slide using a dropper and exposed for different times from 1 to 30~s. After exposure, uncured resin was removed using a bath of isopropyl alcohol. For each of the twenty measurements, the total thickness of the glass and cured resin was measured using a manual caliper. The curing depth was obtained by subtracting the glass thickness of 0.025~cm:
 \begin{equation}
-z_p[\mu\mathrm{m}]=10^4\left(d_{\mathrm{total}}[\mathrm{cm}]-0.025\,\mathrm{cm}\right).
+\frac{z_p}{\mu\mathrm{m}}=10^4\left(\frac{d_{\mathrm{total}}}{\mathrm{cm}}-0.025\right).
 \label{eq:glass}
 \end{equation}
 The thickness values were recorded in steps of 50~$\mu$m. The measurement at 1~s gave no detectable cured resin and was excluded from the fit.
@@ -161,10 +166,10 @@ table[col sep=comma,x=exposure_s,y=resin_height_um]
 \subsection{Linearized working curve}
 Fitting the 19 values with positive curing depth against $\ln(t_p/1\,\mathrm{s})$ gives
 \begin{equation}
-z_p[\mu\mathrm{m}]=146.12\ln(t_p/1\,\mathrm{s})-81.42.
+\frac{z_p}{\mu\mathrm{m}}=146.12\ln(t_p/1\,\mathrm{s})-81.42.
 \label{eq:fit}
 \end{equation}
-The fit gives $h_a=(146.1\pm 7.3)~\mu$m and $T_c=(1.75\pm 0.17)$~s, with $R^2=0.9592$. The uncertainties are the standard errors from the linear fit, including the covariance between the slope and intercept when calculating $T_c$. Figure~\ref{fig:linearcuring} shows the fit and Fig.~\ref{fig:residuals} shows the residuals. The root mean square of the residuals is 23.4~$\mu$m. These statistical uncertainties do not include systematic errors from the caliper, sample compression or incomplete removal of uncured resin.
+The fit gives $h_a=(146.1\pm 7.3)~\mu$m and $T_c=(1.75\pm 0.17)$~s, with $R^2=0.9592$. The uncertainty in $h_a$ is the standard error of the slope. The uncertainty in $T_c$ was obtained by propagating the fit uncertainties, including the covariance between the slope and intercept. Figure~\ref{fig:linearcuring} shows the fit and Fig.~\ref{fig:residuals} shows the residuals. The root mean square of the residuals is 23.4~$\mu$m. These statistical uncertainties do not include systematic errors from the caliper, sample compression or incomplete removal of uncured resin.
 
 % FIGURE 2 — linearized plot. CSV generated by the Python analysis script.
 \begin{figure}[h]
@@ -190,7 +195,7 @@ table[col sep=comma,x=ln_t_s,y=z_um]
 %\addlegendentry{No cure at 1 s}
 \end{axis}
 \end{tikzpicture}
-\caption{Linearized working curve. The slope provides $h_a$; the intercept at zero depth provides $T_c$. The measurement at 1~s with no cured resin was excluded from the fit and is not shown.}
+\caption{Linearized working curve. The slope gives $h_a$, and the horizontal intercept gives $\ln(T_c/1\,\mathrm{s})$. The measurement at 1~s with no cured resin was excluded from the fit and is not shown.}
 \label{fig:linearcuring}
 \end{figure}
 
@@ -215,7 +220,7 @@ table[col sep=comma,x=ln_t_s,y=residual_um]
 \label{fig:residuals}
 \end{figure}
 
-As requested by the laboratory assignment \cite{vilnius2020mnft3}, Table~\ref{tab:times} reports the exposure times calculated using Eq.~\eqref{eq:prediction}. They describe expected curing depths at the threshold and are not independently verified optimal printer settings.
+As requested by the laboratory assignment \cite{vilnius2020mnft3}, Table~\ref{tab:times} reports the exposure times calculated using Eq.~\eqref{eq:prediction}. These are estimates of the exposure times required for the desired curing depths, not independently verified optimal printing settings. The predicted depth of 25~$\mu$m is below the smallest positive measured thickness of 50~$\mu$m. The working curve characterizes the achievable curing depth, which is relevant to axial resolution \cite{vilnius2020mnft3}, but the actual minimum printable layer thickness was not measured.
 
 \begin{table}[h]
 \centering
@@ -237,9 +242,9 @@ Target cured thickness ($\mu$m) & Exposure time (s)\\
 \end{table}
 
 \subsection{XY resolution}
-Figure~\ref{fig:semxy}(a) shows an overview of the printed square structures at 40$\times$ magnification. Figure~\ref{fig:semxy}(b) shows two small openings at 500$\times$ magnification. The openings, originally square, became approximately circular after printing. Their measured horizontal widths were 73.6 and 79.2~$\mu$m, close to the nominal size of 75~$\mu$m. This shows that the openings can be reproduced at this scale, but their original shape is not preserved.
+Figure~\ref{fig:semxy}(a) shows an overview of the printed square structures at 40$\times$ magnification. Figure~\ref{fig:semxy}(b) shows two small openings at 500$\times$ magnification. The openings, originally square, became approximately circular after printing. Their measured horizontal widths were 73.6 and 79.2~$\mu$m, close to the nominal size of 75~$\mu$m. The openings are distinguishable at this scale, but their original shape is not preserved. The rounding may be related to the finite resolution of the projection optics and the curing threshold near the edges of the openings. The individual contributions of these effects were not determined.
 
-Figure~\ref{fig:semxy}(c) shows four bars and the gaps between them at 40$\times$ magnification. Two of the gaps measured 73.4 and 55.1~$\mu$m, close to nominal sizes of 75 and 50~$\mu$m, respectively. The measurements near 75~$\mu$m agree well with each other. The gap near 50~$\mu$m is also visible, but its measurement is less reliable because of the lower SEM magnification and the small number of pixels across the gap. Table~\ref{tab:sem} summarizes these results.
+Figure~\ref{fig:semxy}(c) shows four bars and the gaps between them at 40$\times$ magnification. Two of the gaps measured 73.4 and 55.1~$\mu$m, close to nominal sizes of 75 and 50~$\mu$m, respectively. The measurements near 75~$\mu$m agree well with each other. The gap near 50~$\mu$m is also visible, but its measurement is less reliable because of the lower SEM magnification and the small number of pixels across the gap (approximately 12). Table~\ref{tab:sem} summarizes these results.
 
 % Labels are placed on the images, including when a file is still pending.
 \newcommand{\sempanel}[2]{%
@@ -281,9 +286,9 @@ Gap B3--B4 & 50 & 55.1 & $+10.20$\\
 \end{tabular}
 \end{table}
 
-Based on these measurements, 75~$\mu$m is the most reliable estimate of the XY printing resolution under the conditions used in this experiment. A gap of 50~$\mu$m may also be resolved, but further measurements would be needed to confirm this. The rounding of the square openings shows that the ability to reproduce a small feature does not necessarily mean that its original shape is preserved.
+Under the experimental conditions, features with estimated nominal dimensions of approximately 75~$\mu$m were consistently distinguishable, although their original geometry was not always preserved. A gap with an estimated nominal width of 50~$\mu$m was also visible, but its measurement is less reliable. Since only one scale was printed and the correspondence with the nominal CAD dimensions is approximate, a general minimum XY resolution cannot be established from these measurements.
 
-Figure~\ref{fig:grooves} shows the printed rectangular grooves at 40$\times$ magnification. The feature identified as the fourth groove, counting from the smallest to the largest in the original STL model, was not properly resolved. Instead of a deep rectangular groove, only an irregular and wavy trace was observed on the printed surface. Although the position of the feature can still be identified, its intended geometry was not reproduced. The depth of the groove was not measured.
+Figure~\ref{fig:grooves} shows the printed rectangular grooves at 40$\times$ magnification. The feature identified as the fourth groove, counting from the smallest to the largest in the original STL model, was not properly resolved. Instead of a deep rectangular groove, only an irregular and wavy trace was observed on the printed surface. Although the position of the feature can still be identified, its intended geometry was not reproduced. The depth of the groove was not measured. This example shows a case in which the intended geometry was not resolved, even though a trace remained visible.
 
 \begin{figure}[h]
 \centering
@@ -306,7 +311,7 @@ The second object was a model of the Hubble Space Telescope. Unlike the Bowser m
 \end{figure}
 
 \section{Conclusions}
-The curing depth increased with exposure time and was well described by the Jacobs model. The fit gave an optical penetration depth of about 146~$\mu$m and a critical exposure time of about 1.75~s. The model was used to estimate the exposure times required for curing depths from 25 to 150~$\mu$m. The SEM measurements suggest that 75~$\mu$m is the most reliable estimate of the XY resolution. A gap close to 50~$\mu$m was also observed, but with lower confidence. The small square openings became rounded, showing that the original geometry was not fully preserved. The Hubble Space Telescope model was successfully printed, while the more complex Bowser model was incomplete.
+The curing depth generally increased with exposure time and was well described by the Jacobs model. The fit gave an effective penetration depth of $(146.1\pm7.3)$~$\mu$m and a critical exposure time of $(1.75\pm0.17)$~s, with statistical uncertainties from the fit. Exposure times were estimated for curing depths from 25 to 150~$\mu$m, but the actual minimum printable layer thickness was not determined. Features with estimated nominal dimensions of approximately 75~$\mu$m were consistently distinguishable in the SEM images. A gap close to 50~$\mu$m was also observed, with lower confidence. Small square openings became rounded, and a rectangular groove was reproduced only as an irregular trace. The Hubble Space Telescope model was successfully printed, while the Bowser model was incomplete.
 
 \bibliographystyle{unsrt}
 \bibliography{references}
