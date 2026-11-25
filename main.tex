@@ -103,7 +103,7 @@ The predicted time corresponding to target curing depth $z_{\mathrm{target}}$ is
 t_p=T_c\exp(z_{\mathrm{target}}/h_a).
 \label{eq:prediction}
 \end{equation}
-These relationships provide a estimate of the curing threshold and do not alone establish optimal mechanical strength or layer adhesion.
+These relationships provide an estimate of the curing threshold and do not alone establish optimal mechanical strength or layer adhesion.
 
 \section{Experimental Methods}
 \subsection{Printed structures}
@@ -190,7 +190,7 @@ table[col sep=comma,x=ln_t_s,y=z_um]
 %\addlegendentry{No cure at 1 s}
 \end{axis}
 \end{tikzpicture}
-\caption{Linearized working curve. The slope provides $h_a$; the intercept at zero depth provides $T_c$. The measurement at 1~s with no cured resin is shown for context but excluded from the fit.}
+\caption{Linearized working curve. The slope provides $h_a$; the intercept at zero depth provides $T_c$. The measurement at 1~s with no cured resin was excluded from the fit and is not shown.}
 \label{fig:linearcuring}
 \end{figure}
 
@@ -245,7 +245,7 @@ Figure~\ref{fig:semxy}(c) shows four bars and the gaps between them at 40$\times
 \newcommand{\sempanel}[2]{%
 \IfFileExists{figures/#1}{%
 \begin{overpic}[width=.94\columnwidth]{figures/#1}
-\put(2,92){\colorbox{white}{\small\bfseries (#2)}}
+\put(2,78){\colorbox{white}{\small\bfseries (#2)}}
 \end{overpic}%
 }{%
 \begin{minipage}{.94\columnwidth}
@@ -256,15 +256,10 @@ Figure~\ref{fig:semxy}(c) shows four bars and the gaps between them at 40$\times
 
 \begin{figure}[tbp]
 \centering
-\begin{minipage}[t]{.48\textwidth}
-\centering
-\optionalimage{SEM_7176_annotated.jpg}
-\end{minipage}\hfill
-\begin{minipage}[t]{.48\textwidth}
-\centering
-\optionalimage{SEM_7179_annotated.jpg}
-\end{minipage}
-\caption{Preliminary image-based measurements from Hitachi TM-1000 SEM micrographs: (a) inner apertures at 500$\times$ (image 7176) and (b) apparent bar widths and gaps at 40$\times$ (image 7179). Edges and CAD correspondence require confirmation.}
+\sempanel{TM-1000_7182(x40).jpg}{a}\par\vspace{2mm}
+\sempanel{SEM_7176_annotated.jpg}{b}\par\vspace{2mm}
+\sempanel{SEM_7179_annotated.jpg}{c}
+\caption{SEM images of the printed XY test structures. (a) Overview of the square structures at 40$\times$. (b) Detail of two rounded openings at 500$\times$. (c) Bars and gaps at 40$\times$.}
 \label{fig:semxy}
 \end{figure}
 
