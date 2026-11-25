@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.2)  25 NOV 2026 15:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.8.2)  25 NOV 2026 15:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -729,54 +729,90 @@ File: figures/xy_resolution_3d_perspective.png Graphic file (type png)
 <use figures/xy_resolution_3d_perspective.png>
 Package pdftex.def Info: figures/xy_resolution_3d_perspective.png  used on input line 114.
 (pdftex.def)             Requested size: 245.97409pt x 212.93182pt.
- [1{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[1{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}
 
 
 {/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc} <./figures/vu_logo_burgundy.png>]
 PGFPlots: reading {data/working_curve_corrected.csv}
 PGFPlots: reading {data/working_curve_fit.csv}
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 PGFPlots: reading {data/working_curve_fit.csv}
- [2 <./figures/xy_resolution_3d_perspective.png>]
-<figures/SEM_7176_annotated.jpg, id=131, 670.33043pt x 544.64348pt>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2 <./figures/xy_resolution_3d_perspective.png>]
+<figures/TM-1000_7182(x40).jpg, id=129, 670.33043pt x 544.64348pt>
+File: figures/TM-1000_7182(x40).jpg Graphic file (type jpg)
+<use figures/TM-1000_7182(x40).jpg>
+Package pdftex.def Info: figures/TM-1000_7182(x40).jpg  used on input line 259.
+(pdftex.def)             Requested size: 231.21623pt x 187.86064pt.
+<figures/SEM_7176_annotated.jpg, id=130, 670.33043pt x 544.64348pt>
 File: figures/SEM_7176_annotated.jpg Graphic file (type jpg)
 <use figures/SEM_7176_annotated.jpg>
-Package pdftex.def Info: figures/SEM_7176_annotated.jpg  used on input line 261.
-(pdftex.def)             Requested size: 235.86697pt x 191.64195pt.
-<figures/SEM_7179_annotated.jpg, id=132, 670.33043pt x 544.64348pt>
+Package pdftex.def Info: figures/SEM_7176_annotated.jpg  used on input line 260.
+(pdftex.def)             Requested size: 231.21623pt x 187.86064pt.
+<figures/SEM_7179_annotated.jpg, id=131, 670.33043pt x 544.64348pt>
 File: figures/SEM_7179_annotated.jpg Graphic file (type jpg)
 <use figures/SEM_7179_annotated.jpg>
-Package pdftex.def Info: figures/SEM_7179_annotated.jpg  used on input line 265.
-(pdftex.def)             Requested size: 235.86697pt x 191.64195pt.
+Package pdftex.def Info: figures/SEM_7179_annotated.jpg  used on input line 261.
+(pdftex.def)             Requested size: 231.21623pt x 187.86064pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 276.
- [3 <./figures/SEM_7176_annotated.jpg> <./figures/SEM_7179_annotated.jpg>] (./main.bbl
+(Font)              <8> on input line 271.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/bowser.jpeg, id=134, 1705.37125pt x 1509.64pt>
+File: figures/bowser.jpeg Graphic file (type jpg)
+<use figures/bowser.jpeg>
+Package pdftex.def Info: figures/bowser.jpeg  used on input line 293.
+(pdftex.def)             Requested size: 231.21623pt x 204.66794pt.
+<figures/hubble_telescope.jpeg, id=135, 1964.33875pt x 2094.82625pt>
+File: figures/hubble_telescope.jpeg Graphic file (type jpg)
+<use figures/hubble_telescope.jpeg>
+Package pdftex.def Info: figures/hubble_telescope.jpeg  used on input line 294.
+(pdftex.def)             Requested size: 231.21623pt x 246.57364pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(./main.bbl
 Underfull \hbox (badness 1990) in paragraph at lines 9--12
 []\T1/lmr/m/n/10 (+20) Hua Gong, Michael Beauchamp, Steven Perry,
  []
 
-) [4
+[3]) [4 <./figures/TM-1000_7182(x40).jpg> <./figures/SEM_7176_annotated.jpg> <./figures/SEM_7179_annotated.jpg>] [5
 
-] (./main.aux)
+ <./figures/bowser.jpeg> <./figures/hubble_telescope.jpeg>] (./main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: BF11A62670426FA6937DA8C52FEAB982;2258.
+(rerunfilecheck)             Checksum: 0F5559415399F64B5A8ED536DEEBDF44;2263.
  ) 
 Here is how much of TeX's memory you used:
- 33682 strings out of 467525
- 781177 string characters out of 5418983
- 1382369 words of memory out of 5000000
- 61887 multiletter control sequences out of 15000+600000
- 691560 words of font info for 146 fonts, out of 8000000 for 9000
+ 33716 strings out of 467525
+ 782047 string characters out of 5418983
+ 1381047 words of memory out of 5000000
+ 61914 multiletter control sequences out of 15000+600000
+ 694605 words of font info for 149 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,19n,108p,1154b,2262s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (4 pages, 660359 bytes).
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmsy9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on main.pdf (5 pages, 1215950 bytes).
 PDF statistics:
- 253 PDF objects out of 1000 (max. 8388607)
- 196 compressed objects within 2 object streams
- 38 named destinations out of 1000 (max. 500000)
- 35473 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 269 PDF objects out of 1000 (max. 8388607)
+ 205 compressed objects within 3 object streams
+ 40 named destinations out of 1000 (max. 500000)
+ 37536 words of extra memory for PDF output out of 42996 (max. 10000000)
 
